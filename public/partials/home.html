@@ -1,7 +1,11 @@
 <h1>Home Page</h1>
 <!--We use UL and LI to render the list of videos-->
 <ul>
-    <li ng-repeat='video in videos'>{{video.title}}</li>
+    <li ng-repeat='video in videos'>
+        <a href="/#/video/{{video._id}}">
+            {{video.title}}
+        </a>
+    </li>
 </ul>
 
 <p>
