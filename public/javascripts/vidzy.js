@@ -10,6 +10,9 @@ app.config(['$routeProvider', function($routeProvider){
             templateUrl: 'partials/home.html',
             controller: 'HomeCtrl' //registering controller as part of the route
         })
+        .when('/add-video', {
+            templateUrl: 'partials/video-form.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
