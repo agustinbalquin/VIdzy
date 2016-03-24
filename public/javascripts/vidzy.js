@@ -27,3 +27,14 @@ app.controller('HomeCtrl', ['$scope', '$resource', // scope passes data, resouce
             $scope.videos = videos; // scope ties view with controller 
         });
     }]);
+
+//Save controller
+app.controller('AddVideoCtrl', ['$scope', '$resource', '$location', 
+    function($scope, $resource, $location){
+        $scope.save = function(){
+            var Videos = $resource('/api/videos');
+            Videos.save($scope.video, function(){
+                $location.path('/');
+            });
+        };
+    }]);
